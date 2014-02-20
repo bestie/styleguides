@@ -571,6 +571,36 @@
     some_method one: 1, two: 2
     ```
 
+- Add a trailing comma to multi-line array and hash definitions
+  for clearer diffs and less churn
+
+  ```ruby
+    # bad
+    hash = {
+      one: 1,
+      two: 2
+    }
+
+    # good
+    hash = {
+      one: 1,
+      two: 2,
+    }
+
+    # bad
+    array = [
+      :one,
+      :two
+    ]
+
+    # good
+    array = [
+      :one,
+      :two,
+    ]
+
+  ```
+
 ## Strings
 
 -   Prefer string interpolation instead of string concatenation:
