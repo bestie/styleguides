@@ -488,6 +488,24 @@
     end
     ```
 
+-   Prefer methods over class constants. This elimates the danger of
+    'constants' being changed or mutated. There is not usually a good reason
+    for these to be class methods.
+
+    ```ruby
+      # bad
+      class SomeClass
+        SOME_VALUES = [:one, :two, :three].freeze
+      end
+
+      # good
+      class SomeClass
+        def some_values
+          [:one, :two, :three]
+        end
+      end
+    ```
+
 ## Exceptions
 
 -   Don’t use exceptions for flow of control.
